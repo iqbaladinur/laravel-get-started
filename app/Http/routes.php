@@ -11,16 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    $product = array(
-        'mesin cuci',
-        'mesin kopi',
-        'mesin giling',
-        'mesin gali'
-    );
-    return view('pages.home', array('product' => $product));
-});
+Route::get('/', 'PagesController@homePage');
 
 Route::get("about", function (){
     return view('pages.about');
-});
+});  

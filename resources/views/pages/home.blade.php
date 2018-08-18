@@ -1,5 +1,5 @@
 @extends('static_template.base_view')
-@section('title', 'Home page')
+@section('title', 'Home')
 @section('content')
     <section class="hero is-danger is-medium">
     <div class="hero-body">
@@ -34,13 +34,32 @@
         </div>
     </div>
     </section>
-    <div id="home" class="container">
-        <div id="daftar-product">
-            <ul>
-                @foreach ($product as $p)
-                        <li>{{$p}}</li> 
+    <section class="section">
+            <div id="home" class="container">
+            <h4 class="title is-size-4">Topics</h4>
+            <hr>
+            <div id="daftar-product" class="columns is-multiline">
+                @foreach ($data as $topic)
+                    <div class="column is-3">
+                        <div class="card card-hover has-background-primary">
+                            <a href="#someroutes">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                    <img class="fit-object" src="http://emka.web.id/wp-content/uploads/2013/09/laravel-logo-big.png" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <div class="header-title">
+                                            <h4 class="has-text-centered is-capitalized"><?= $topic?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> 
+                    </div>
                 @endforeach
-            </ul>
+            </div>
         </div>
-    </div>
+    </section>
 @endsection
